@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          Hello, I'm Erik Emanuel. I'm a nutritionist by education, and a web
+          Hello, I'm Erik Emanuel. I'm a nutritionist by education, and web
           developer by profession.
         </p>
         <p>
