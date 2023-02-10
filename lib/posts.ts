@@ -80,7 +80,7 @@ export function getSortedPostsData() {
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      ...(matterResult.data as MatterData),
     };
   });
   // Sort posts by date
@@ -92,3 +92,5 @@ export function getSortedPostsData() {
     }
   });
 }
+
+type MatterData = { date: string; title: string };
