@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts.js";
+import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head.js";
-import Date from "../../components/date.jsx";
+import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import { useRouter } from "next/router.js";
 
