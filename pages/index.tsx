@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import { getSortedPostsData } from "../lib/posts.js";
+import { getSortedPostsData } from "../lib/posts";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link.js";
-import Date from "../components/date.js";
+import Date from "../components/date";
 
 export default function Home({ allPostsData }) {
   return (
@@ -60,10 +60,15 @@ export async function getStaticProps() {
 
 import useSWR from "swr";
 
+const getUser = (url: string) => fetch(url).then<User>((r) => r.json());
+
 function Profile() {
-  const { data, error } = useSWR("/api/user", fetch);
+  const { data, error } = useSWR("/api/user", getUser);
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
+  // if('name' in data)
   return <div>hello {data.name}!</div>;
 }
+
+type User = Response & { name: string };
